@@ -2,14 +2,17 @@
 
 Input::Input() 
 {
-	m_current = IDLE;
+	m_current = "IDLE";
 }
 Input::~Input() {}
 
-void Input::setCurrent(Action a) {
+void Input::setCurrent(sf::String a) {
 	m_current = a;
 }
 
-Input::Action Input::getCurrent() {
+sf::String Input::getCurrent()
+{
 	return m_current;
 }
+
+

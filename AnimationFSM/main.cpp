@@ -16,7 +16,7 @@ int main()
 	sf::Texture texture;
 	if (!texture.loadFromFile("assets\\grid.png")) {
 		DEBUG_MSG("Failed to load file");
-		return EXIT_FAILURE;
+		return 0;
 	}
 
 	// Setup Players Default Animated Sprite
@@ -81,5 +81,5 @@ int main()
 		window.display();
 	}
 
-	return EXIT_SUCCESS;
+	return 0;
 };
