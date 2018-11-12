@@ -19,3 +19,19 @@ void Idle::climbing(Animation* a)
 	a->setCurrent(new Climbing());
 	delete this;
 }
+
+void Idle::walking(Animation * a)
+{
+}
+
+void Idle::swordsmanship(Animation * a)
+{
+}
+
+void Idle::hammering(Animation * a)
+{
+}
+
+void Idle::shoveling(Animation * a)
+{
+}

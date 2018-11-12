@@ -19,8 +19,8 @@ Player::~Player() {}
 
 AnimatedSprite& Player::getAnimatedSprite()
 {
-	int frame = m_animated_sprite.getCurrentFrame();
-	m_animated_sprite.setTextureRect(m_animated_sprite.getFrame(frame));
+
+	m_animated_sprite.setTextureRect(m_animated_sprite.getCurrentFrame());
 	return m_animated_sprite;
 }
 
@@ -28,26 +28,25 @@ void Player::handleInput(Input in)
 {
 	DEBUG_MSG("Handle Input");
 
-	switch (in.getCurrent())
+	if (input.getCurrent() == "IDLE")
 	{
-	case Input::Action::IDLE:
-		//std::cout << "Player Idling" << std::endl;
 		m_animation.idle();
-		break;
-	case Input::Action::UP:
-		//std::cout << "Player Up" << std::endl;
+	}
+	else if (input.getCurrent() == "UP")
+	{
 		m_animation.climbing();
-		break;
-	case Input::Action::LEFT:
-		//std::cout << "Player Left" << std::endl;
+	}
+	else if (input.getCurrent() == "LEFT")
+	{
 		m_animation.jumping();
-		break;
-	case Input::Action::RIGHT:
-		//std::cout << "Player Idling" << std::endl;
+	}
+	else if(input.getCurrent() == "RIGHT")
+	{
 		m_animation.jumping();
-		break;
-	default:
-		break;
+	}
+	else
+	{
+		m_animation.idle();
 	}
 }
 

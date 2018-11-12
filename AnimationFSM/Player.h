@@ -8,6 +8,7 @@
 class Player
 {
 private:
+	Input input;
 	Animation m_animation;
 	AnimatedSprite m_animated_sprite;
 	Player();

@@ -16,3 +16,19 @@ void Jumping::climbing(Animation* a)
 	a->setCurrent(new Climbing());
 	delete this;
 }
+
+void Jumping::walking(Animation * a)
+{
+}
+
+void Jumping::swordsmanship(Animation * a)
+{
+}
+
+void Jumping::hammering(Animation * a)
+{
+}
+
+void Jumping::shoveling(Animation * a)
+{
+}

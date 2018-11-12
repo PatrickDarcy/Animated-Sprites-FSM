@@ -21,16 +21,11 @@ int main()
 
 	// Setup Players Default Animated Sprite
 	AnimatedSprite animated_sprite(texture);
-	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
 
 	// Setup the Player
 	Player player(animated_sprite);
 	Input input;
+	AnimatedSprite animation;
 	
 	// Start the game loop
 	while (window.isOpen())
@@ -48,19 +43,23 @@ int main()
 			case sf::Event::KeyPressed:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
-					input.setCurrent(Input::Action::LEFT);
+					input.setCurrent("LEFT");
+					animation.setCurrentRow(2);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
-					input.setCurrent(Input::Action::RIGHT);
+					input.setCurrent("RIGHT");
+					animation.setCurrentRow(3);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 				{
-					input.setCurrent(Input::Action::UP);
+					input.setCurrent("UP");
+					animation.setCurrentRow(4);
 				}
 				break;
 			default:
-				input.setCurrent(Input::Action::IDLE);
+				input.setCurrent("IDLE");
+				animation.setCurrentRow(1);
 				break;
 			}
 		}

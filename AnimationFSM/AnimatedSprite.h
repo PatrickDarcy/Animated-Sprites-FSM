@@ -21,14 +21,18 @@ public:
 	const vector<IntRect>& getFrames();
 	const IntRect& getFrame(int);
 	void addFrame(IntRect&);
-	const int getCurrentFrame();
+	const IntRect getCurrentFrame();
 	void update();
+	void setCurrentFrame();
+	void setCurrentRow(int t_row);
 	
 private:
 	Clock m_clock;
 	Time m_time;
 	vector<IntRect> m_frames;
-	int m_current_frame;
+	IntRect m_current_frame;
+	int m_current_frame_row;
+	int m_current_frame_col;
 };
 
 #endif // !ANIMATED_SPRITE_H
